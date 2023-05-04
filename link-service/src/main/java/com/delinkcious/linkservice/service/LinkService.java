@@ -3,6 +3,7 @@ package com.delinkcious.linkservice.service;
 import com.delinkcious.linkservice.domain.Link;
 import com.delinkcious.linkservice.repository.LinkRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +20,7 @@ public class LinkService {
     public Long addLink(Link link) {
         return linkRepository.save(link).getId();
     }
+    @Transactional
     public Long updateLink(Link newLink) {
         Link targetLink = validateExistingLink(newLink.getId());
         return targetLink.update(newLink).getId();
