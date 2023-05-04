@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Getter @Setter @ToString @NoArgsConstructor
-@Entity @Table(name = "link")
+@Entity @Table(name = "links")
 public class Link extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
